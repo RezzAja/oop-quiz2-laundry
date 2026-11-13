@@ -36,5 +36,10 @@ public abstract class LaundryOrder {
      *
      * @return harga dalam Rupiah
      */
-    public abstract double calculatePrice();
+    public abstract double calculatePrice();{
+
+    if (weightKg < 0) {
+        throw new IllegalArgumentException("Weight cannot be negative");
+    }
+}
 }

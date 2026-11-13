@@ -16,6 +16,10 @@ import java.util.List;
  * membuat ConsoleReceiptPrinter di dalam kelas ini.
  */
 public class LaundryDesk {
+    private ReceiptPrinter printer;
+    private int count;
+    
+
 
     /**
      * Membuat meja laundry kosong dan menyimpan pencetak struk yang diberikan.
@@ -23,16 +27,22 @@ public class LaundryDesk {
      * @param printer pencetak struk yang dipakai saat checkout
      */
     public LaundryDesk(ReceiptPrinter printer) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.printer = printer;
+
+       // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
      * Menyimpan pesanan laundry ke daftar dan ke Map (kuncinya kode pesanan laundry).
      *
+     *
      * @param order pesanan laundry yang ditambahkan
      */
     public void add(LaundryOrder order) {
-        throw new UnsupportedOperationException("Not implemented yet");
+         if (order == null) {
+            throw new IllegalArgumentException("Order cannot be null");
+        }
+        //throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -42,21 +52,27 @@ public class LaundryDesk {
      * @return pesanan laundry yang cocok, atau {@code null} bila tidak ada
      */
     public LaundryOrder findById(String orderId) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (orderId == null) {
+            throw new IllegalArgumentException("Order ID cannot be null");
+        }
+       throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
      * @return jumlah pesanan laundry yang tersimpan
      */
     public int count() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return count;
+        
+        //throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
      * @return daftar pesanan laundry menurut urutan penambahan
      */
     public List<LaundryOrder> getOrders() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return null;
+        //throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
