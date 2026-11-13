@@ -36,8 +36,13 @@ public class OrderCalculator {
      * @return jumlah biaya antar-jemput, atau 0 bila tidak ada yang punya
      */
     public static double totalDelivery(List<LaundryOrder> orders) {
-      throw new UnsupportedOperationException("Not implemented yet");
-        
+        double total = 0;
+        for (LaundryOrder order : orders) {
+            if (order instanceof Deliverable deliverable) {
+                total += deliverable.deliveryFee();
+            }
+        }
+        return total;
     }
 
     /**
